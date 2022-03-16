@@ -11,7 +11,7 @@
   <canvas id="unity-canvas"
         style="position: relative; width: auto; height: 98vh;margin-top:1vh; background: rgb(35, 31, 32) none repeat scroll 0% 0%; cursor: default;"
         width="1170" height="2532"></canvas>
-        <script src="/TEST.loader.js"></script>
+        <script src="Build/TEST.loader.js"></script>
     <script>
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/TEST.loader.js";
@@ -25,35 +25,8 @@
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
-
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
-      } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
     </script>
+    <script src="Build/TEST.framework.js.br"></script>
+    <script src="Build/TEST.framework.js.br"></script>
   </body>
 </html>
