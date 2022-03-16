@@ -1,32 +1,34 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="ja">
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | TeraTumTum</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body style="text-align: center;width: 100vw;height: 100vh; margin: 0">
-  <canvas id="unity-canvas"
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unity WebGL Player | DrawRain</title>
+</head>
+
+<body style="text-align: center;width: 100vw;height: 100vh; margin: 0">
+    <canvas id="unity-canvas"
         style="position: relative; width: auto; height: 98vh;margin-top:1vh; background: rgb(35, 31, 32) none repeat scroll 0% 0%; cursor: default;"
         width="1170" height="2532"></canvas>
-        <script src="Build/TEST.loader.js"></script>
+    <script src="Build/TEST.loader.js"></script>
     <script>
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/TEST.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/TEST.data.br",
-        frameworkUrl: buildUrl + "/TEST.framework.js.br",
-        codeUrl: buildUrl + "/TEST.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "TeraTumTum",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+            dataUrl: "Build/TEST.data",
+            frameworkUrl: "Build/TEST.framework.js",
+            codeUrl: "Build/TEST.wasm",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "tora1",
+            productName: "TeraTumTum",
+            productVersion: "1.0",
+            // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+            // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        });
     </script>
-    <script src="Build/TEST.framework.js.br"></script>
-    <script src="Build/TEST.framework.js.br"></script>
-  </body>
+    <script src="Build/TEST.framework.js"></script>
+    <script src="Build/TEST.framework.js"></script>
+
+</body>
 </html>
